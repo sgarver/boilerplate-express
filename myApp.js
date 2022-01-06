@@ -4,7 +4,7 @@ var app = express();
 
 
 
-app.get("/", (req, res) => {
+app.get("/demo", (req, res) => {
     res.send("Hello Express");
 });
 
