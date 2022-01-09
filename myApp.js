@@ -7,7 +7,7 @@ app.get("/", (req, res) => {
 
     console.log(__dirname);
 
-    app.use("/public", express.static(__dirname + "/public"));
+    app.use("public", express.static(__dirname + "/public"));
 });
 
 
