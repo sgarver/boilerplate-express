@@ -48,10 +48,17 @@ app.get('/:word/echo', (req, res, next) => {
 
 
 const handleName = (req, res) => {
-    res.json({name: `${req.query.first} ${req.query.last}`});
+    if (req.method === "GET") {
+        res.json({name: `${req.query.first} ${req.query.last}`});
+    } else if (req.method === "POST") {
+        res.json({name: `${req.body.first} ${req.body.last}`});
+    }
 };
 
 app.route('/name').get(handleName).post(handleName);
+
+
+
 
 
 module.exports = app;
