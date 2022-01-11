@@ -6,6 +6,17 @@ var express = require('express');
 var app = express();
 
 
+
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.path} - ${req.ip}`);
+
+    next();
+});
+
+
+
+
+
 app.use(express.static("public"));
 app.use("/public", express.static("public"));
 
